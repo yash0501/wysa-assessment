@@ -14,7 +14,9 @@ app.use(cors());
 app.use(express.static("public"));
 app.use(express.json());
 
-mongoose.connect(DB_URL, { useNewUrlParser: true });
+mongoose.connect(DB_URL, {
+  useNewUrlParser: true,
+});
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
